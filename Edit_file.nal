@@ -1,0 +1,47 @@
+// Structure of the Object - Nested Component Relationships
+<Car --> (*, Engine, Transmission, Wheels)>.
+<Engine --> (*, Alternator, Gas_Pump, Engine_Oil_Filter, Air_Filter)>. 
+<Transmission --> (*, Transmission_Oil_Filter, Oil_Pump, Gears)>. 
+<Wheels --> (*, Brakes, Tires)>.
+<Brakes --> (*, Pads, Discs, Fluid_System)>.
+<Tires --> (*, Balance_Weights)>.
+
+// Available Sensations - the shape of an 'input vector'
+<Car --> (*, CE, TG, OL, TP, NO, OR)>.
+// Check Engine Light
+<CE --> (|, [ON],[OFF])>.
+// Temperature Indicator 
+<TG --> (|, [High], [Normal], [Low])>. 
+// Oil Light
+<OL --> (|, [ON], [OFF])>. 
+// Tire Pressure Indicator
+<TP --> (|, [High], [Normal], [Low])>. 
+// Presence Of 'unnatural' noise
+<NO --> (|, [Normal], [Grinding], [Rhythmic], [Thumping], [High_Pitched])>. 
+// Odometer Reading
+<OR --> (|, [New], [Low], [Normal], [High], [Old])>.
+
+// Sensor-Component Property Relations
+<<CE --> [ON]> ==> <Engine --> [Not_Working]>>.
+<<CE --> [ON]> ==> <Alternator --> [Not_Working]>>.
+<<TG --> [High]> ==> <Engine --> [Not_Working]>>.
+<<TG --> [High]> ==> <Air_Filter --> [Not_Working]>>.
+<<OL --> [ON]> ==> <Engine_Oil_Filter --> [Not_Working]>>.
+<<OL --> [ON]> ==> <Transmission_Oil_Filter --> [Not_Working]>>.
+<<OL --> [ON]> ==> <Oil_Pump --> [Not_Working]>>.
+<<TP --> [ON]> ==> <Wheels --> [Not_Working]>>.
+<<TP --> [ON]> ==> <Tires --> [Not_Working]>>.
+<<NO --> [Grinding]> ==> <Engine --> [Not_Working]>>.
+<<NO --> [Grinding]> ==> <Transmission --> [Not_Working]>>.
+<<NO --> [High_Pitched]>  ==> <Brakes --> [Not_Working]>>.
+<<NO --> [Thumping]> ==> <Balance_Weights --> [Not_Working]>>.
+
+// Special Case relation for the Noise indicator
+<<OR --> [High]> ==> <Engine --> [Not_Working]>>. %0.72;0.85%
+<<OR --> [High]> ==> <Transmission --> [Not_Working]>>. %0.83;0.92%
+<<OR --> [High]> ==> <Wheels --> [Not_Working]>>. %0.80;0.71%
+<<OR --> [Old]> ==> <Engine --> [Not_Working]>>. %0.83;0.75%
+<<OR --> [Old]> ==> <Transmission --> [Not_Working]>>. %0.85;0.76%
+<<OR --> [Old]> ==> <Wheels --> [Not_Working]>>. %0.82;0.79%
+
+// Mismunandi bílatýpur == mismunandi líkur á mismunandi hlutum

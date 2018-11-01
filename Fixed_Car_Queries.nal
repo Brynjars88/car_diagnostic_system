@@ -1,0 +1,17 @@
+<{Car1} --> Car>.
+<{Car2} --> Car>.
+<{Car3} --> Car>.
+<{Car4} --> Car>.
+<{Car5} --> Car>.
+
+<Car1 ==> (&&, <CE --> [ON]>, <OL --> [ON]>)>.
+<Car2 ==> (&&, <OL --> [ON]>, <TG --> [High]>)>.
+<Car3 ==> (&&, <CE --> [ON]>, <NO --> [Grinding]>)>.
+<Car4 ==> (&&, <CE --> [ON]>, <OR --> [High]>)>.
+<Car5 ==> (&&, <OL --> [ON]>, <OR --> [High]>)>.
+
+<Car1 ==> <? --> [Not_Working]>>?
+<Car2 ==> <? --> [Not_Working]>>?
+<Car3 ==> <? --> [Not_Working]>>?
+<Car4 ==> <? --> [Not_Working]>>?
+<Car5 ==> <? --> [Not_Working]>>?
