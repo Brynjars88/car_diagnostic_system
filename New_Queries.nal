@@ -1,0 +1,41 @@
+// Endless run for some reason...
+// <Car1 ==> (&&, <OL --> [ON]>, <OR --> [High]>)>.
+
+<{Car1} --> Car>.
+<{Car2} --> Car>.
+<{Car3} --> Car>.
+<{Car4} --> Car>.
+<{Car5} --> Car>.
+
+<Car1 ==> (&&, <CE --> [ON]>, <OL --> [ON]>)>.
+<Car2 ==> (&&, <OL --> [ON]>, <TG --> [High]>)>.
+<Car3 ==> (&&, <CE --> [ON]>, <NO --> [Grinding]>)>.
+<Car4 ==> (&&, <CE --> [ON]>, <OR --> [High]>)>.
+<Car5 ==> (&&, <OL --> [ON]>, <OR --> [High]>)>.
+
+<Car1 ==> <? --> [Not_Working]>>?
+<Car2 ==> <? --> [Not_Working]>>?
+<Car3 ==> <? --> [Not_Working]>>?
+<Car4 ==> <? --> [Not_Working]>>?
+<Car5 ==> <? --> [Not_Working]>>?
+
+// Ask which car type
+<Car1 --> [Car1_Type]>.
+<{Car1_Type} --> Car_Type>.
+<Car1_Type <-> ?x>?
+
+<Car2 --> [Car2_Type]>.
+<{Car2_Type} --> Car_Type>.
+<Car2_Type <-> ?x>?
+
+<Car3 --> [Car3_Type]>.
+<{Car3_Type} --> Car_Type>.
+<Car3_Type <-> ?x>?
+
+//<Car4 --> [Car4_Type]>.
+//<{Car4_Type} --> Car_Type>.
+//<Car4_Type <-> ?x>?
+
+//<Car5 --> [Car5_Type]>.
+//<{Car5_Type} --> Car_Type>.
+//<Car5_Type <-> ?x>?

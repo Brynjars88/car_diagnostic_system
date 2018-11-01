@@ -6,6 +6,12 @@
 <Brakes --> (*, Pads, Discs, Fluid_System)>.
 <Tires --> (*, Balance_Weights)>.
 
+// Car types
+<{Sedan, Sport, SUV} --> Car_Type>.
+
+// Car age ("driven age")
+<{New, Low, Normal, High, Old} --> Car_Age>.
+
 // Available Sensations - the shape of an 'input vector'
 <Car --> (*, CE, TG, OL, TP, NO, OR)>.
 // Check Engine Light
@@ -44,4 +50,22 @@
 <<OR --> [Old]> ==> <Transmission --> [Not_Working]>>. %0.85;0.76%
 <<OR --> [Old]> ==> <Wheels --> [Not_Working]>>. %0.82;0.79%
 
-// Mismunandi bílatýpur == mismunandi líkur á mismunandi hlutum
+// Failures for different car types
+<Sedan --> [Engine]>. %0.15;0.55%
+<Sport --> [Engine]>. %0.13;0.%
+<SUV --> [Engine]>. %0.10;0.51%
+<Sedan --> [Transmission]>. %0.09;0.88%
+<Sport --> [Transmission]>. %0.18;0.59%
+<SUV --> [Transmission]>. %0.12;0.73%
+<Sedan --> [Wheels]>. %0.11;0.66%
+<Sport --> [Wheels]>. %0.15;0.55%
+<SUV --> [Wheels]>. %0.12;0.71%
+
+// Failures for different car ages
+<New --> [Engine]>. %0.01;0.91%
+<Low --> [Engine]>. %0.05;0.89%
+<Normal --> [Engine]>. %0.10;0.84%
+<High --> [Engine]>. %0.22;0.91%
+<Old --> [Engine]>. %0.40;0.83%
+
+
